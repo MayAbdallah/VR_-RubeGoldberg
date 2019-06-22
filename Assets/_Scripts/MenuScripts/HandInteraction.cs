@@ -13,7 +13,7 @@ public class HandInteraction : MonoBehaviour {
     private SteamVR_Behaviour_Pose m_PoseBehaviour;
 
     //public SteamVR_Action_Vector2 actionDeleteMenuTool; //We do it as Vector2 not Boolean, because Oculus's GrapGrip input takes values from 0 to 1
-    public SteamVR_Action_Boolean actionDeleteMenuTool = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabGrip");
+    public SteamVR_Action_Boolean actionDeleteMenuTool = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Grab Grip");
     private Player player = null;
     private Coroutine btnAndTxtDeleteToolHintCoroutine;
 
