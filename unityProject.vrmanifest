@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrnd_c8a_projectassetpack.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "D:\\VR High Immersion\\3. High Immersion\\High Immersion - Starter Project\\High-Immersion-Starter-Project-1.1.0\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VRND_C8A_ProjectAssetPack [Testing]"
+        }
+      }
+    }
+  ]
+}
