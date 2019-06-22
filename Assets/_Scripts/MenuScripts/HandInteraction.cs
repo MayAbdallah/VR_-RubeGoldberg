@@ -74,7 +74,7 @@ public class HandInteraction : MonoBehaviour {
                     GrabObject(col); 
             }
 
-            if (actionDeleteMenuTool.GetStateDown(SteamVR_Input_Sources.LeftHand)) //Release
+            if (SteamVR_Actions.default_GrabGrip.GetStateDown(SteamVR_Input_Sources.LeftHand))//actionDeleteMenuTool.GetStateDown(SteamVR_Input_Sources.LeftHand)) //Release
             {  
                 DisableDeleteToolHint();
 
