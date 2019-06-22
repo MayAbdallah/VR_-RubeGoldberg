@@ -60,7 +60,7 @@ public class PlayingBall : MonoBehaviour
 
             
             GameObject[] gobj = GameObject.FindGameObjectsWithTag("Ball");
-            if(gobj == null || gobj.Length == 0)
+            if(gobj == null || gobj.Length == 0 || gobj.Length == 3 ) //The 3 balls is balls in Box
             {
                 Debug.Log("Creating Ball in PlayingBall.cs");
                 Instantiate(th.BallCreatorObject, th.BallCreatorPosition.position, th.BallCreatorPosition.rotation);
