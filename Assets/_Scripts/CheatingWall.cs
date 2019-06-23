@@ -5,9 +5,9 @@ using Valve.VR.InteractionSystem;
 
 public class CheatingWall : MonoBehaviour {
 
-    public Throwable th;
-    public GameObject createdBallObj;
-    public CreatingBall createdBall;
+    private Throwable th;
+    private GameObject createdBallObj;
+    private CreatingBall createdBall;
 
 
     // Use this for initialization
