@@ -6,6 +6,19 @@ using Valve.VR.InteractionSystem;
 public class CheatingWall : MonoBehaviour {
 
     public Throwable th;
+    public GameObject createdBallObj;
+    public CreatingBall createdBall;
+
+
+    // Use this for initialization
+    void Start()
+    {
+        createdBallObj = GameObject.Find("CreatingBall");
+        if (createdBallObj != null)
+        {
+            createdBall = createdBallObj.GetComponent<CreatingBall>();
+        }
+    }
 
     private void OnTriggerExit(Collider col)
     {
@@ -16,8 +29,10 @@ public class CheatingWall : MonoBehaviour {
             if (th.IsAttached())
             {
                 WaitTime();
+                //Instantiate(th.BallCreatorObject, th.BallCreatorPosition.position, th.BallCreatorPosition.rotation);
+                Instantiate(createdBall.BallObject, createdBall.transform.position, createdBall.transform.rotation);
                 Destroy(col.gameObject);
-                Instantiate(th.BallCreatorObject, th.BallCreatorPosition.position, th.BallCreatorPosition.rotation);
+                
             }
         }
 

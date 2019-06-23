@@ -8,6 +8,7 @@ public class PlayingBall : MonoBehaviour
 {
 
     public Throwable th;
+    public CreatingBall createdBall; 
 
 
     // public float lifeTime = 300f; // 5 minut
@@ -18,7 +19,7 @@ public class PlayingBall : MonoBehaviour
     void Start()
     {
         th = GetComponent<Throwable>();
-
+        createdBall = GetComponent<CreatingBall>();
     }
 
 
@@ -40,10 +41,18 @@ public class PlayingBall : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-
+       
         if (col.gameObject.CompareTag("Floor"))
         {
             Debug.Log("The Ball at Floor (OnCollisionEnter)");
+
+            GameObject[] gobj = GameObject.FindGameObjectsWithTag("Ball");
+            if (gobj == null || gobj.Length == 0 || gobj.Length == 3) //The 3 balls is balls in Box
+            {
+                Debug.Log("Creating Ball in PlayingBall.cs");
+                // Instantiate(th.BallCreatorObject, th.BallCreatorPosition.position, th.BallCreatorPosition.rotation);
+                Instantiate(createdBall.BallObject, createdBall.transform.position, createdBall.transform.rotation); 
+            }
 
             WaitTime();
             Destruction();
@@ -57,14 +66,7 @@ public class PlayingBall : MonoBehaviour
             {
                 star.SetActive(true);//Make it true (Active)
             }
-
-            
-            GameObject[] gobj = GameObject.FindGameObjectsWithTag("Ball");
-            if(gobj == null || gobj.Length == 0 || gobj.Length == 3 ) //The 3 balls is balls in Box
-            {
-                Debug.Log("Creating Ball in PlayingBall.cs");
-                Instantiate(th.BallCreatorObject, th.BallCreatorPosition.position, th.BallCreatorPosition.rotation);
-            }
+   
         }
 
         else if (col.gameObject.CompareTag("Star"))
