@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-using UnityEditor;
+//using UnityEditor;
 
 public class PlayingBall : MonoBehaviour
 {
